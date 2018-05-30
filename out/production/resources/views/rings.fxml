@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="791.0" prefWidth="1031.0" style="-fx-background-color: #fFffff;" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.isu.tashkenova.appSch.controllers.RingsController">
+    <children>
+
+        <Label layoutX="95.0" layoutY="55.0" text="Расписание звонков">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <TableView layoutX="105.0" layoutY="176.0" onMouseClicked="#tableClicked" prefHeight="475.0" prefWidth="411.0">
+            <columns>
+                <TableColumn prefWidth="41.0" text="№" />
+                <TableColumn minWidth="0.0" prefWidth="166.0" text="Начало урока" />
+                <TableColumn prefWidth="202.0" text="Конец урока" />
+            </columns>
+        </TableView>
+        <Button layoutX="795.0" layoutY="665.0" mnemonicParsing="false" onAction="#saveButtonClicked" text="Сохранить изменения" />
+      <ChoiceBox layoutX="366.0" layoutY="123.0" prefWidth="150.0" />
+      <Label layoutX="113.0" layoutY="120.0" text="Смена">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField layoutX="790.0" layoutY="183.0" />
+      <TextField layoutX="790.0" layoutY="229.0" />
+      <Label fx:id="lastlesson" layoutX="580.0" layoutY="183.0" text="Номер 1 урока в смене">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstlesson" layoutX="580.0" layoutY="230.0" prefHeight="51.0" prefWidth="172.0" text="Номер последнего урока в смене" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="887.0" layoutY="296.0" mnemonicParsing="false" onAction="#okClicked" prefHeight="25.0" prefWidth="51.0" text="ОК" />
+
+    </children>
+</AnchorPane>
