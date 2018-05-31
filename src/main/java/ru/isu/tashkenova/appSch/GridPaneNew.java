@@ -31,16 +31,23 @@ public class GridPaneNew extends GridPane {
 
     private void selectCell(int col, int row, boolean select,boolean main){
         final Node node  = getNodeFromGridPane(col, row);
-
         if (select){
             if(main){
-            node.setStyle("-fx-background-color: #80ccff ;-fx-border-width: 0.5; -fx-border-color: #000000");
+            node.setStyle("-fx-background-color:#80ccff ;-fx-border-width: 0.5; -fx-border-color:black");
             }
             else {
-                node.setStyle("-fx-background-color: #ffb366;-fx-border-width: 0.5; -fx-border-color: #000000");
+                node.setStyle("-fx-background-color:#ffb366;-fx-border-width: 0.5; -fx-border-color:black");
             }
         } else {
-            node.setStyle(" -fx-background-color: #ffffff;-fx-border-width: 0.5; -fx-border-color: #000000");
+            switch (node.getId()){
+                case "right":
+                    node.setStyle("-fx-background-color:#ffffff;-fx-border-width: 0.5; -fx-border-color:black");
+                    break;
+                case "wrong":
+                    node.setStyle("-fx-background-color:#ff5c33;-fx-border-width: 0.5; -fx-border-color:black");
+                    break;
+            }
+
         }
     }
 
@@ -51,7 +58,7 @@ public class GridPaneNew extends GridPane {
             }
         }
     }
-    public void selectRange(int selectedCol, int selectedRow){
+    public void selectRange(int selectedCol, int selectedRow ){
         deselectAll();
         for (int col = 0; col < cols; col++){
             for (int row = 0; row < rows; row++){

@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import ru.isu.tashkenova.appSch.RetrofitService;
 import ru.isu.tashkenova.appSch.Role;
 import ru.isu.tashkenova.appSch.User;
 import ru.isu.tashkenova.appSch.UserView;
@@ -88,9 +87,9 @@ public class ChangeUserController  {
                 user_fathername, user_login, user_password, 1);
 
 
-        RetrofitService.RetrofitBuild().putUser(userv.getId(), user).execute();
+       /* RetrofitService.RetrofitBuild().putUser(userv.getId(), user).execute();
         UsersController.data.set(id,new UserView(user.getName(), user.getSurname(),
-                user.getFathername(), user.getLogin(), user.getRoleId(), user_rolename, user.getId(), user.getPassword()));
+                user.getFathername(), user.getLogin(), user.getRoleId(), user_rolename, user.getId(), user.getPassword()));*/
 
 
         cname.getScene().getWindow().hide();

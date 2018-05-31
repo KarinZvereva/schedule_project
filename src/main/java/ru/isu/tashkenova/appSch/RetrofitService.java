@@ -6,16 +6,15 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-
 public class RetrofitService  {
 
-    static Proxy proxy = new Proxy(Proxy.Type.HTTP,  new InetSocketAddress(
-            "proxy.isu.ru", 3128));
-    static OkHttpClient client = new OkHttpClient.Builder().proxy(proxy).build();
+  // static Proxy proxy = new Proxy(Proxy.Type.HTTP,  new InetSocketAddress(
+   //         "proxy.isu.ru", 3128));
+    static OkHttpClient client = new OkHttpClient.Builder()
+           // .proxy(proxy)
+            .build();
 
-    public static UserService RetrofitBuild() {
+    public static UserService RetrofitBuildU() {
         Gson gson = new GsonBuilder().setLenient().create();
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -25,6 +24,19 @@ public class RetrofitService  {
                 .build();
 
         UserService service = retrofit.create(UserService.class);
+        return service;
+    }
+
+    public static WorkloadService RetrofitBuildW() {
+        Gson gson = new GsonBuilder().setLenient().create();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://protected-temple-84049.herokuapp.com/")
+                .client(client)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        WorkloadService service = retrofit.create(WorkloadService.class);
         return service;
     }
 

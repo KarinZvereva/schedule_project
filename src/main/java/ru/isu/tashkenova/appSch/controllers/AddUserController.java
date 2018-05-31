@@ -73,7 +73,7 @@ public class AddUserController {
                 user_fathername, user_login, user_password, 1);
 
 
-        RetrofitService.RetrofitBuild().addUser(user).execute();
+        RetrofitService.RetrofitBuildU().addUser(user).execute();
         UsersController.data.add(new UserView(user.getName(), user.getSurname(),
                 user.getFathername(), user.getLogin(), user.getRoleId(), user_rolename, user.getId(), user.getPassword()));
 

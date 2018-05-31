@@ -65,7 +65,7 @@ public class UsersController implements ListEditor{
                 .setDateFormat("MMM dd, yyyy")
                 .create();
 
-        service = RetrofitService.RetrofitBuild();
+        service = RetrofitService.RetrofitBuildU();
 
         columnName.setCellValueFactory(celldata -> celldata.getValue().nameProperty());
         columnSurname.setCellValueFactory(celldata -> celldata.getValue().lastnameProperty());

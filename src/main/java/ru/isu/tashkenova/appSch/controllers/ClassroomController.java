@@ -1,7 +1,5 @@
 package ru.isu.tashkenova.appSch.controllers;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,14 +9,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import retrofit2.Response;
-import ru.isu.tashkenova.appSch.Cabinet;
 import ru.isu.tashkenova.appSch.CabinetView;
-import ru.isu.tashkenova.appSch.RetrofitService;
 import ru.isu.tashkenova.appSch.UserService;
 
 import java.io.IOException;
-import java.util.List;
 
 public class ClassroomController {
 
@@ -41,7 +35,7 @@ public class ClassroomController {
 
     @FXML
     void initialize() throws IOException {
-        columnId.setCellValueFactory(celldata -> celldata.getValue().idProperty().asObject());
+       /* columnId.setCellValueFactory(celldata -> celldata.getValue().idProperty().asObject());
         columnName.setCellValueFactory(celldata -> celldata.getValue().nameProperty());
 
         Gson gson = new GsonBuilder()
@@ -58,7 +52,7 @@ public class ClassroomController {
             Cabinet cabinet = gson.fromJson(gson.toJson(w), Cabinet.class);
             data.add(new CabinetView(cabinet.getId(),cabinet.getName()));
         }
-        tableClassroom.setItems(data);
+        tableClassroom.setItems(data);*/
     }
 
     @FXML
